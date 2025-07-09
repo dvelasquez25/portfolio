@@ -1,0 +1,27 @@
+---
+export interface Props {
+  icon: string;
+  title: string;
+  skills: Array<{
+    name: string;
+    percentage: number;
+  }>;
+}
+
+const { icon, title, skills } = Astro.props;
+---
+
+<div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-200">
+  <div class="text-blue-600 text-4xl mb-4">{icon}</div>
+  <h3 class="text-xl font-semibold text-gray-900 mb-4">{title}</h3>
+  <div class="space-y-2">
+    {skills.map((skill) => (
+      <div class="flex items-center justify-between">
+        <span class="text-gray-600">{skill.name}</span>
+        <div class="w-24 bg-gray-200 rounded-full h-2">
+          <div class="bg-blue-600 h-2 rounded-full" style={`width: ${skill.percentage}%`}></div>
+        </div>
+      </div>
+    ))}
+  </div>
+</div> 
