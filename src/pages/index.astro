@@ -1,527 +1,620 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import SectionHeader from '../components/SectionHeader.astro';
-import SkillCard from '../components/SkillCard.astro';
-import LearningCard from '../components/LearningCard.astro';
-import ProjectCard from '../components/ProjectCard.astro';
-import ContactCard from '../components/ContactCard.astro';
-import TimezoneDisplay from '../components/TimezoneMap.jsx';
+import Layout from "../layouts/Layout.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import SkillCard from "../components/SkillCard.astro";
+import LearningCard from "../components/LearningCard.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import ContactCard from "../components/ContactCard.astro";
+import TimezoneDisplay from "../components/TimezoneMap.jsx";
 ---
 
 <Layout title="Diego Velasquez | Portfolio | Software Engineer">
-	<!-- Navigation -->
-	<nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-200">
-		<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-			<div class="flex justify-between items-center h-16">
-				<div class="text-xl font-bold text-gray-900">Portfolio</div>
-				<div class="hidden md:flex space-x-8">
-					<a href="#about" class="text-gray-600 hover:text-gray-900 transition-colors">About</a>
-					<a href="#skills" class="text-gray-600 hover:text-gray-900 transition-colors">Skills</a>
-					<a href="#learning" class="text-gray-600 hover:text-gray-900 transition-colors">Learning</a>
-					<a href="#projects" class="text-gray-600 hover:text-gray-900 transition-colors">Projects</a>
-					<a href="#contact" class="text-gray-600 hover:text-gray-900 transition-colors">Contact</a>
-				</div>
-			</div>
-		</div>
-	</nav>
+  <!-- Navigation -->
+  <nav
+    class="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-200"
+  >
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="text-xl font-bold text-gray-900">Portfolio</div>
+        <div class="hidden md:flex space-x-8">
+          <a
+            href="#about"
+            class="text-gray-600 hover:text-gray-900 transition-colors">About</a
+          >
+          <a
+            href="#skills"
+            class="text-gray-600 hover:text-gray-900 transition-colors"
+            >Skills</a
+          >
+          <a
+            href="#learning"
+            class="text-gray-600 hover:text-gray-900 transition-colors"
+            >Learning</a
+          >
+          <a
+            href="#projects"
+            class="text-gray-600 hover:text-gray-900 transition-colors"
+            >Projects</a
+          >
+          <a
+            href="#contact"
+            class="text-gray-600 hover:text-gray-900 transition-colors"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </div>
+  </nav>
 
-	<!-- Hero Section -->
-	<section class="hero-section pt-24  px-4 sm:px-6 lg:px-8">
-		<div class="max-w-6xl mx-auto text-center">
-			<div>
-				<div class="hero-status inline-flex items-center px-4 py-2 rounded-full bg-green-100 text-green-800 text-sm font-medium mb-6 animate-pulse">
-					<span class="w-2 h-2 bg-green-600 rounded-full mr-2 animate-pulse"></span>
-					Available for new opportunities
-				</div>
-				<h1 class="hero-title text-5xl md:text-7xl font-bold text-gray-900 mb-6">
-					Hi, I'm <span class="text-blue-600">Diego Velasquez</span>
-				</h1>
-				<p class="hero-subtitle text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
-					Senior Software Engineer with 6+ years of experience building high-rated applications, optimizing infrastructure, and enhancing cybersecurity
-				</p>
-				<div class="hero-buttons flex flex-col sm:flex-row gap-4 justify-center">
-					<a href="#projects" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors">
-						View My Work
-					</a>
-					<a href="#contact" class="border border-gray-300 text-gray-700 px-8 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">
-						Get In Touch
-					</a>
-				</div>
-			</div>
-		</div>
-	</section>
+  <!-- Hero Section -->
+  <section class="hero-section pt-24 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto text-center">
+      <div>
+        <div
+          class="hero-status inline-flex items-center px-4 py-2 rounded-full bg-green-100 text-green-800 text-sm font-medium mb-6 animate-pulse"
+        >
+          <span class="w-2 h-2 bg-green-600 rounded-full mr-2 animate-pulse"
+          ></span>
+          Available for new opportunities
+        </div>
+        <h1
+          class="hero-title text-5xl md:text-7xl font-bold text-gray-900 mb-6"
+        >
+          Hi, I'm <span class="text-blue-600">Diego Velasquez</span>
+        </h1>
+        <p
+          class="hero-subtitle text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto"
+        >
+          Senior Software Engineer with 6+ years of experience building
+          high-rated applications, optimizing infrastructure, and enhancing
+          cybersecurity
+        </p>
+        <div
+          class="hero-buttons flex flex-col sm:flex-row gap-4 justify-center"
+        >
+          <a
+            href="#projects"
+            class="bg-blue-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors"
+          >
+            View My Work
+          </a>
+          <a
+            href="#contact"
+            class="border border-gray-300 text-gray-700 px-8 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors"
+          >
+            Get In Touch
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-	<!-- About Section -->
-	<section id="about" class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-		<div class="max-w-6xl mx-auto">
-			<div class="text-center mb-16">
-				<h2 class="text-4xl font-bold text-gray-900 mb-4">About Me</h2>
-				<p class="text-xl text-gray-600 max-w-3xl mx-auto">
-					Senior Software Developer with expertise in React, automation, and full-stack development. Proven track record in building high-rated applications, optimizing infrastructure, and enhancing cybersecurity.
-				</p>
-			</div>
-			<div class="grid md:grid-cols-2 gap-12 items-center">
-				<div>
-					<h3 class="text-2xl font-semibold text-gray-900 mb-4">My Journey</h3>
-					<p class="text-gray-600 mb-6">
-						With over 6 years of experience, I've worked at companies like Amazon, Kyndryl, and Tactacam, building high-rated applications and optimizing infrastructure. I specialize in React, automation, and cloud technologies, with a strong focus on cybersecurity.
-					</p>
-					<p class="text-gray-600 mb-6">
-						Currently pursuing my MSc in Cyber Security while working as a Senior Software Engineer. I'm passionate about creating scalable solutions, implementing automation, and ensuring system reliability across cross-functional teams.
-					</p>
-					<div class="flex space-x-4">
-						<a href="#" class="text-blue-600 hover:text-blue-700 font-medium">Download Resume</a>
-						<a href="https://linkedin.com/in/diegovelasquez25" class="text-blue-600 hover:text-blue-700 font-medium">View LinkedIn</a>
-					</div>
-				</div>
-				<div class="bg-gray-100 rounded-2xl p-8">
-					<div class="grid grid-cols-2 gap-6">
-						<div class="text-center">
-							<div class="text-3xl font-bold text-blue-600 mb-2">6+</div>
-							<div class="text-gray-600">Years Experience</div>
-						</div>
-						<div class="text-center">
-							<div class="text-3xl font-bold text-blue-600 mb-2">4.9★</div>
-							<div class="text-gray-600">App Rating (150K+ reviews)</div>
-						</div>
-						<div class="text-center">
-							<div class="text-3xl font-bold text-blue-600 mb-2">40%</div>
-							<div class="text-gray-600">Customer Reach Increase</div>
-						</div>
-						<div class="text-center">
-							<div class="text-3xl font-bold text-blue-600 mb-2">MSc</div>
-							<div class="text-gray-600">Cyber Security</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+  <!-- About Section -->
+  <section id="about" class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">About Me</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Senior Software Developer with expertise in React, automation, and
+          full-stack development. Proven track record in building high-rated
+          applications, optimizing infrastructure, and enhancing cybersecurity.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h3 class="text-2xl font-semibold text-gray-900 mb-4">My Journey</h3>
+          <p class="text-gray-600 mb-6">
+            With over 6 years of experience, I've worked at companies like
+            Amazon, Kyndryl, and Tactacam, building high-rated applications and
+            optimizing infrastructure. I specialize in React, automation, and
+            cloud technologies, with a strong focus on cybersecurity.
+          </p>
+          <p class="text-gray-600 mb-6">
+            Currently pursuing my MSc in Cyber Security while working as a
+            Senior Software Engineer. I'm passionate about creating scalable
+            solutions, implementing automation, and ensuring system reliability
+            across cross-functional teams.
+          </p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-blue-600 hover:text-blue-700 font-medium"
+              >Download Resume</a
+            >
+            <a
+              href="https://linkedin.com/in/diegovelasquez25"
+              class="text-blue-600 hover:text-blue-700 font-medium"
+              >View LinkedIn</a
+            >
+          </div>
+        </div>
+        <div class="bg-gray-100 rounded-2xl p-8">
+          <div class="grid grid-cols-2 gap-6">
+            <div class="text-center">
+              <div class="text-3xl font-bold text-blue-600 mb-2">6+</div>
+              <div class="text-gray-600">Years Experience</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-blue-600 mb-2">4.9★</div>
+              <div class="text-gray-600">App Rating (150K+ reviews)</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-blue-600 mb-2">40%</div>
+              <div class="text-gray-600">Customer Reach Increase</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-blue-600 mb-2">MSc</div>
+              <div class="text-gray-600">Cyber Security</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-	<!-- Skills Section -->
-	<section id="skills" class="py-16 px-4 sm:px-6 lg:px-8">
-		<div class="max-w-6xl mx-auto">
-			<SectionHeader 
-				title="Skills & Technologies"
-				description="I work with modern technologies and tools to create exceptional digital experiences"
-			/>
-			<div class="grid md:grid-cols-3 gap-8">
-				<SkillCard 
-					icon="💻"
-					title="Frontend & Mobile"
-					skills={[
-						{ name: "React.js", percentage: 95 },
-						{ name: "React Native", percentage: 90 },
-						{ name: "TypeScript", percentage: 85 }
-					]}
-				/>
-				<SkillCard 
-					icon="⚡"
-					title="Backend & Cloud"
-					skills={[
-						{ name: "Node.js", percentage: 90 },
-						{ name: "Python", percentage: 85 },
-						{ name: "AWS", percentage: 80 }
-					]}
-				/>
-				<SkillCard 
-					icon="🔧"
-					title="Automation & DevOps"
-					skills={[
-						{ name: "Scripting", percentage: 90 },
-						{ name: "SQL", percentage: 85 },
-						{ name: "Cybersecurity", percentage: 80 }
-					]}
-				/>
-			</div>
-		</div>
-	</section>
+  <!-- Skills Section -->
+  <section id="skills" class="py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto">
+      <SectionHeader
+        title="Skills & Technologies"
+        description="I work with modern technologies and tools to create exceptional digital experiences"
+      />
+      <div class="grid md:grid-cols-3 gap-8">
+        <SkillCard
+          icon="💻"
+          title="Frontend & Mobile"
+          skills={[
+            { name: "React.js", percentage: 95 },
+            { name: "React Native", percentage: 90 },
+            { name: "TypeScript", percentage: 85 },
+          ]}
+        />
+        <SkillCard
+          icon="⚡"
+          title="Backend & Cloud"
+          skills={[
+            { name: "Node.js", percentage: 90 },
+            { name: "Python", percentage: 85 },
+            { name: "AWS", percentage: 80 },
+          ]}
+        />
+        <SkillCard
+          icon="🔧"
+          title="Automation & DevOps"
+          skills={[
+            { name: "Scripting", percentage: 90 },
+            { name: "SQL", percentage: 85 },
+            { name: "Cybersecurity", percentage: 80 },
+          ]}
+        />
+      </div>
+    </div>
+  </section>
 
-	<!-- Currently Learning Section -->
-	<section id="learning" class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-		<div class="max-w-6xl mx-auto">
-			<SectionHeader 
-				title="Currently Learning"
-				description="Expanding my skillset with modern technologies and infrastructure tools"
-			/>
-			<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-				<LearningCard 
-					logo="https://upload.wikimedia.org/wikipedia/commons/d/d5/Rust_programming_language_black_logo.svg"
-					title="Rust Programming"
-					description="Learning Rust for systems programming, memory safety, and high-performance applications. Exploring its unique ownership model and zero-cost abstractions."
-					tag="Systems Programming"
-					tagColor="bg-orange-100 text-orange-800"
-				/>
-				<LearningCard 
-					logo="/images/docker.svg"
-					title="Docker"
-					description="Mastering containerization with Docker for consistent development environments, microservices architecture, and streamlined deployment workflows."
-					tag="Containerization"
-					tagColor="bg-blue-100 text-blue-800"
-					logoSize="h-20 w-20"
-					logoStyle="filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(199deg) brightness(104%) contrast(97%);"
-				/>
-				<LearningCard 
-					logo="https://docker-mailserver.github.io/docker-mailserver/v11.3/assets/logo/dmo-logo-white.min.svg"
-					title="Email Server Configuration"
-					description="Setting up self-hosted email servers using Docker Mailserver for complete control over email infrastructure and domain management."
-					tag="Infrastructure"
-					tagColor="bg-green-100 text-green-800"
-					logoSize="h-12 w-12"
-					logoContainer="w-20 h-20 rounded-full flex items-center justify-center mx-auto"
-					logoStyle="background-color: #2496ED;"
-				/>
-				<LearningCard 
-					logo="/images/astro-logo.svg"
-					title="Astro"
-					description="Building blazing fast, modern websites with Astro. This portfolio is proudly built using Astro for optimal performance and flexibility."
-					tag="Web Framework"
-					tagColor="bg-purple-100 text-purple-800"
-					logoSize="h-24 w-24"
-				/>
-			</div>
-		</div>
-	</section>
+  <!-- Currently Learning Section -->
+  <section id="learning" class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <SectionHeader
+        title="Currently Learning"
+        description="Expanding my skillset with modern technologies and infrastructure tools"
+      />
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <LearningCard
+          logo="https://upload.wikimedia.org/wikipedia/commons/d/d5/Rust_programming_language_black_logo.svg"
+          title="Rust Programming"
+          description="Learning Rust for systems programming, memory safety, and high-performance applications. Exploring its unique ownership model and zero-cost abstractions."
+          tag="Systems Programming"
+          tagColor="bg-orange-100 text-orange-800"
+        />
+        <LearningCard
+          logo="/images/docker.svg"
+          title="Docker"
+          description="Mastering containerization with Docker for consistent development environments, microservices architecture, and streamlined deployment workflows."
+          tag="Containerization"
+          tagColor="bg-blue-100 text-blue-800"
+          logoSize="h-20 w-20"
+          logoStyle="filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(199deg) brightness(104%) contrast(97%);"
+        />
+        <LearningCard
+          logo="https://docker-mailserver.github.io/docker-mailserver/v11.3/assets/logo/dmo-logo-white.min.svg"
+          title="Email Server Configuration"
+          description="Setting up self-hosted email servers using Docker Mailserver for complete control over email infrastructure and domain management."
+          tag="Infrastructure"
+          tagColor="bg-green-100 text-green-800"
+          logoSize="h-12 w-12"
+          logoContainer="w-20 h-20 rounded-full flex items-center justify-center mx-auto"
+          logoStyle="background-color: #2496ED;"
+        />
+        <LearningCard
+          logo="/images/astro-logo.svg"
+          title="Astro"
+          description="Building blazing fast, modern websites with Astro. This portfolio is proudly built using Astro for optimal performance and flexibility."
+          tag="Web Framework"
+          tagColor="bg-purple-100 text-purple-800"
+          logoSize="h-24 w-24"
+        />
+      </div>
+    </div>
+  </section>
 
-	<!-- Projects Section -->
-	<section id="projects" class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-		<div class="max-w-6xl mx-auto">
-			<SectionHeader 
-				title="Featured Projects"
-				description="Here are some of my recent projects that showcase my skills and creativity"
-			/>
-			<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-				<ProjectCard 
-					logo="/images/reveal-logo.svg"
-					logoAlt="Reveal Logo"
-					title="Reveal Mobile App and Web Portal"
-					description="Maintained a high-rated mobile app with 150K+ reviews and 4.9-star rating for hunting cameras."
-					technologies={["React Native", "TypeScript", "Next.js"]}
-					logoSize="h-24 w-24"
-					backgroundStyle="bg-black"
-					links={[
-						{ text: "View Project", url: "https://www.tactacam.com/" },
-						{ text: "App Store", url: "https://apps.apple.com/us/app/tactacam-reveal/id1515339989" },
-						{ text: "Google Play", url: "https://play.google.com/store/apps/details?id=com.tactacam.reveal&hl=en&pli=1" }
-					]}
-				/>
-				<ProjectCard 
-					logo="/images/aws-logo.svg"
-					logoAlt="AWS Logo"
-					title="AWS Automation Platform"
-					description="Automated data gathering and processing using AWS Lambda, S3, and Athena for Amazon Payroll."
-					technologies={["Python", "AWS Lambda", "S3"]}
-					logoSize="h-20 w-20"
-					backgroundStyle="bg-white"
-				/>
-				<ProjectCard 
-					logo="/images/roc-capital-logo.svg"
-					logoAlt="Roc Capital Logo"
-					title="Customer Portal Development"
-					description="Developed a comprehensive customer portal at Roc Capital that increased customer reach by 40% and improved user experience."
-					technologies={["React", "Spring", "Java"]}
-					logoSize="h-28 w-28"
-					backgroundStyle="bg-blue-900"
-					links={[
-						{ text: "View Project", url: "https://roccapital.com/" }
-					]}
-				/>
-				<ProjectCard 
-					logo="/images/oniwi-nails.png"
-					logoAlt="Oniwi Nails Logo"
-					title="Oniwi Nails Website"
-					description="Designed and developed a modern, responsive website for Oniwi Nails nail salon with booking functionality and service showcase."
-					technologies={["React", "Next.js", "Tailwind CSS"]}
-					logoSize="h-40 w-40"
-					backgroundStyle="bg-gradient-to-br from-pink-50 to-white"
-					links={[
-						{ text: "View Project", url: "https://oniwinails.com/" }
-					]}
-				/>
-			</div>
-		</div>
-	</section>
+  <!-- Projects Section -->
+  <section id="projects" class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <SectionHeader
+        title="Featured Projects"
+        description="Here are some of my recent projects that showcase my skills and creativity"
+      />
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <ProjectCard
+          logo="/images/reveal-logo.svg"
+          logoAlt="Reveal Logo"
+          title="Reveal Mobile App and Web Portal"
+          description="Maintained a high-rated mobile app with 150K+ reviews and 4.9-star rating for hunting cameras."
+          technologies={["React Native", "TypeScript", "Next.js"]}
+          logoSize="h-24 w-24"
+          backgroundStyle="bg-black"
+          links={[
+            { text: "View Project", url: "https://www.tactacam.com/" },
+            {
+              text: "App Store",
+              url: "https://apps.apple.com/us/app/tactacam-reveal/id1515339989",
+            },
+            {
+              text: "Google Play",
+              url: "https://play.google.com/store/apps/details?id=com.tactacam.reveal&hl=en&pli=1",
+            },
+          ]}
+        />
+        <ProjectCard
+          logo="/images/aws-logo.svg"
+          logoAlt="AWS Logo"
+          title="AWS Automation Platform"
+          description="Automated data gathering and processing using AWS Lambda, S3, and Athena for Amazon Payroll."
+          technologies={["Python", "AWS Lambda", "S3"]}
+          logoSize="h-20 w-20"
+          backgroundStyle="bg-white"
+        />
+        <ProjectCard
+          logo="/images/roc-capital-logo.svg"
+          logoAlt="Roc Capital Logo"
+          title="Customer Portal Development"
+          description="Developed a comprehensive customer portal at Roc Capital that increased customer reach by 40% and improved user experience."
+          technologies={["React", "Spring", "Java"]}
+          logoSize="h-28 w-28"
+          backgroundStyle="bg-blue-900"
+          links={[{ text: "View Project", url: "https://roccapital.com/" }]}
+        />
+        <ProjectCard
+          logo="/images/oniwi-nails.png"
+          logoAlt="Oniwi Nails Logo"
+          title="Oniwi Nails Website"
+          description="Designed and developed a modern, responsive website for Oniwi Nails nail salon with booking functionality and service showcase."
+          technologies={["React", "Next.js", "Tailwind CSS"]}
+          logoSize="h-40 w-40"
+          backgroundStyle="bg-gradient-to-br from-pink-50 to-white"
+          links={[{ text: "View Project", url: "https://oniwinails.com/" }]}
+        />
+        <ProjectCard
+          logo="/favicon.svg"
+          logoAlt="Portfolio Logo"
+          title="This Portfolio"
+          description="My personal portfolio site built with Astro, React, and Tailwind CSS. Designed for performance, accessibility, and a modern developer experience."
+          technologies={["Astro", "React", "Tailwind CSS"]}
+          logoSize="h-20 w-20"
+          backgroundStyle="bg-white"
+          links={[{ text: "View Portfolio", url: "/" }]}
+        />
+      </div>
+    </div>
+  </section>
 
-	<!-- Timezone Section -->
-	<section id="timezone" class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-		<div class="max-w-4xl mx-auto">
-			<SectionHeader 
-				title="Timezone Advantage"
-				description="Based in Costa Rica (Central Time), I share a close timezone with the US. This enables real-time collaboration, quick response times, and overlapping work hours—making remote teamwork seamless and efficient."
-			/>
-			<div class="flex flex-col items-center justify-center mt-8">
-				<TimezoneDisplay client:load />
-				<p class="mt-6 text-center text-gray-600 text-lg">
-					<span class="font-semibold text-blue-700">Costa Rica</span> operates on Central Time (CST), perfectly aligned for US business hours.
-				</p>
-			</div>
-		</div>
-	</section>
+  <!-- Timezone Section -->
+  <section id="timezone" class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <SectionHeader
+        title="Timezone Advantage"
+        description="Based in Costa Rica (Central Time), I share a close timezone with the US. This enables real-time collaboration, quick response times, and overlapping work hours—making remote teamwork seamless and efficient."
+      />
+      <div class="flex flex-col items-center justify-center mt-8">
+        <TimezoneDisplay client:load />
+        <p class="mt-6 text-center text-gray-600 text-lg">
+          <span class="font-semibold text-blue-700">Costa Rica</span> operates on
+          Central Time (CST), perfectly aligned for US business hours.
+        </p>
+      </div>
+    </div>
+  </section>
 
-	<!-- Contact Section -->
-	<section id="contact" class="py-16 px-4 sm:px-6 lg:px-8">
-		<div class="max-w-4xl mx-auto text-center">
-			<SectionHeader 
-				title="Let's Work Together"
-				description="I'm always interested in new opportunities and exciting projects. Let's discuss how we can bring your ideas to life."
-			/>
-			<div class="grid md:grid-cols-2 gap-8">
-				<ContactCard 
-					icon="📧"
-					title="Email"
-					description="contactme@diegovelasquez.dev"
-					linkText="Send Email"
-					linkUrl="mailto:contactme@diegovelasquez.dev"
-				/>
-				<ContactCard 
-					icon="💼"
-					title="LinkedIn"
-					description="Connect with me professionally"
-					linkText="View Profile"
-					linkUrl="https://linkedin.com/in/diegovelasquez25"
-				/>
-			</div>
-		</div>
-	</section>
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center">
+      <SectionHeader
+        title="Let's Work Together"
+        description="I'm always interested in new opportunities and exciting projects. Let's discuss how we can bring your ideas to life."
+      />
+      <div class="grid md:grid-cols-2 gap-8">
+        <ContactCard
+          icon="📧"
+          title="Email"
+          description="contactme@diegovelasquez.dev"
+          linkText="Send Email"
+          linkUrl="mailto:contactme@diegovelasquez.dev"
+        />
+        <ContactCard
+          icon="💼"
+          title="LinkedIn"
+          description="Connect with me professionally"
+          linkText="View Profile"
+          linkUrl="https://linkedin.com/in/diegovelasquez25"
+        />
+      </div>
+    </div>
+  </section>
 
-	<!-- Footer -->
-	<footer class="bg-gray-900 text-white py-12 px-4 sm:px-6 lg:px-8">
-		<div class="max-w-6xl mx-auto text-center">
-			<div class="text-2xl font-bold mb-4">Diego Velasquez</div>
-			<p class="text-gray-400 mb-8">Senior Software Engineer specializing in software engineering, architecture, and cybersecurity</p>
-			<div class="flex justify-center space-x-6 mb-8">
-				<a href="https://github.com/dvelasquez25" class="text-gray-400 hover:text-white transition-colors">GitHub</a>
-				<a href="https://linkedin.com/in/diegovelasquez25" class="text-gray-400 hover:text-white transition-colors">LinkedIn</a>
-			</div>
-			<div class="border-t border-gray-800 pt-8">
-				<p class="text-gray-400">&copy; 2025 Diego Velasquez. All rights reserved.</p>
-			</div>
-		</div>
-	</footer>
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto text-center">
+      <div class="text-2xl font-bold mb-4">Diego Velasquez</div>
+      <p class="text-gray-400 mb-8">
+        Senior Software Engineer specializing in software engineering,
+        architecture, and cybersecurity
+      </p>
+      <div class="flex justify-center space-x-6 mb-8">
+        <a
+          href="https://github.com/dvelasquez25"
+          class="text-gray-400 hover:text-white transition-colors">GitHub</a
+        >
+        <a
+          href="https://linkedin.com/in/diegovelasquez25"
+          class="text-gray-400 hover:text-white transition-colors">LinkedIn</a
+        >
+      </div>
+      <div class="border-t border-gray-800 pt-8">
+        <p class="text-gray-400">
+          &copy; 2025 Diego Velasquez. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
 </Layout>
 
 <script>
-	import { gsap } from 'gsap';
-	import { ScrollTrigger } from 'gsap/ScrollTrigger';
-	import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
-	// Register GSAP plugins
-	gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+  // Register GSAP plugins
+  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-	// Initialize animations when DOM is loaded
-	document.addEventListener('DOMContentLoaded', () => {
-		initializeAnimations();
-	});
+  // Initialize animations when DOM is loaded
+  document.addEventListener("DOMContentLoaded", () => {
+    initializeAnimations();
+  });
 
-	function initializeAnimations() {
-		// Check if GSAP is available
-		if (typeof gsap === 'undefined') {
-			console.warn('GSAP not available, animations disabled');
-			// Ensure all elements are visible if GSAP is not available
-			document.querySelectorAll('#projects .grid > div, #about .grid > div, #skills .grid > div, #contact .grid > div').forEach(el => {
-				(el as HTMLElement).style.opacity = '1';
-				(el as HTMLElement).style.transform = 'translateY(0)';
-			});
-			return;
-		}
+  function initializeAnimations() {
+    // Check if GSAP is available
+    if (typeof gsap === "undefined") {
+      console.warn("GSAP not available, animations disabled");
+      // Ensure all elements are visible if GSAP is not available
+      document
+        .querySelectorAll(
+          "#projects .grid > div, #about .grid > div, #skills .grid > div, #contact .grid > div"
+        )
+        .forEach((el) => {
+          (el as HTMLElement).style.opacity = "1";
+          (el as HTMLElement).style.transform = "translateY(0)";
+        });
+      return;
+    }
 
-		// Hero section animations
-		animateHeroSection();
+    // Hero section animations
+    animateHeroSection();
 
-		// Section animations
-		animateSections();
+    // Section animations
+    animateSections();
 
-		// Smooth scroll for navigation links
-		setupSmoothScroll();
-	}
+    // Smooth scroll for navigation links
+    setupSmoothScroll();
+  }
 
-	function animateHeroSection() {
-		const tl = gsap.timeline();
+  function animateHeroSection() {
+    const tl = gsap.timeline();
 
-		// Animate the status badge
-		tl.from('.hero-status', {
-			opacity: 0,
-			y: 30,
-			duration: 0.8,
-			ease: 'power2.out'
-		})
+    // Animate the status badge
+    tl.from(".hero-status", {
+      opacity: 0,
+      y: 30,
+      duration: 0.8,
+      ease: "power2.out",
+    })
 
-		// Animate the main heading
-		.from('.hero-title', {
-			opacity: 0,
-			y: 50,
-			duration: 1,
-			ease: 'power2.out'
-		})
+      // Animate the main heading
+      .from(".hero-title", {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        ease: "power2.out",
+      })
 
-		// Animate the subtitle
-		.from('.hero-subtitle', {
-			opacity: 0,
-			y: 30,
-			duration: 0.8,
-			ease: 'power2.out'
-		}, '-=0.5')
+      // Animate the subtitle
+      .from(
+        ".hero-subtitle",
+        {
+          opacity: 0,
+          y: 30,
+          duration: 0.8,
+          ease: "power2.out",
+        },
+        "-=0.5"
+      )
 
-		// Animate the CTA buttons
-		.from('.hero-buttons a', {
-			opacity: 0,
-			y: 20,
-			duration: 0.6,
-			stagger: 0.2,
-			ease: 'power2.out'
-		}, '-=0.3');
-	}
+      // Animate the CTA buttons
+      .from(
+        ".hero-buttons a",
+        {
+          opacity: 0,
+          y: 20,
+          duration: 0.6,
+          stagger: 0.2,
+          ease: "power2.out",
+        },
+        "-=0.3"
+      );
+  }
 
-	function animateSections() {
-		// Configuration array for section animations
-		const sectionAnimations = [
-			{
-				selector: '#about h2',
-				trigger: '#about',
-				y: 50,
-				delay: 0
-			},
-			{
-				selector: '#about .text-xl',
-				trigger: '#about',
-				y: 30,
-				delay: 0.2
-			},
-			{
-				selector: '#about .grid > div',
-				trigger: '#about .grid',
-				y: 50,
-				stagger: 0.3
-			},
-			{
-				selector: '#skills h2',
-				trigger: '#skills',
-				y: 50
-			},
-			{
-				selector: '#skills .grid > div',
-				trigger: '#skills .grid',
-				y: 60,
-				stagger: 0.2
-			},
-			{
-				selector: '#learning h2',
-				trigger: '#learning',
-				y: 50
-			},
-			{
-				selector: '#learning .text-xl',
-				trigger: '#learning',
-				y: 30,
-				delay: 0.2
-			},
-			{
-				selector: '#learning .grid > div',
-				trigger: '#learning .grid',
-				y: 60,
-				stagger: 0.2
-			},
-			{
-				selector: '#projects h2',
-				trigger: '#projects',
-				y: 50
-			},
-			{
-				selector: '#projects .text-xl',
-				trigger: '#projects',
-				y: 30,
-				delay: 0.2
-			},
-			{
-				selector: '#contact h2',
-				trigger: '#contact',
-				y: 50
-			},
-			{
-				selector: '#contact .grid > div',
-				trigger: '#contact .grid',
-				y: 40,
-				stagger: 0.2
-			}
-		];
+  function animateSections() {
+    // Configuration array for section animations
+    const sectionAnimations = [
+      {
+        selector: "#about h2",
+        trigger: "#about",
+        y: 50,
+        delay: 0,
+      },
+      {
+        selector: "#about .text-xl",
+        trigger: "#about",
+        y: 30,
+        delay: 0.2,
+      },
+      {
+        selector: "#about .grid > div",
+        trigger: "#about .grid",
+        y: 50,
+        stagger: 0.3,
+      },
+      {
+        selector: "#skills h2",
+        trigger: "#skills",
+        y: 50,
+      },
+      {
+        selector: "#skills .grid > div",
+        trigger: "#skills .grid",
+        y: 60,
+        stagger: 0.2,
+      },
+      {
+        selector: "#learning h2",
+        trigger: "#learning",
+        y: 50,
+      },
+      {
+        selector: "#learning .text-xl",
+        trigger: "#learning",
+        y: 30,
+        delay: 0.2,
+      },
+      {
+        selector: "#learning .grid > div",
+        trigger: "#learning .grid",
+        y: 60,
+        stagger: 0.2,
+      },
+      {
+        selector: "#projects h2",
+        trigger: "#projects",
+        y: 50,
+      },
+      {
+        selector: "#projects .text-xl",
+        trigger: "#projects",
+        y: 30,
+        delay: 0.2,
+      },
+      {
+        selector: "#contact h2",
+        trigger: "#contact",
+        y: 50,
+      },
+      {
+        selector: "#contact .grid > div",
+        trigger: "#contact .grid",
+        y: 40,
+        stagger: 0.2,
+      },
+    ];
 
-		// Iterate over the configuration and create animations
-		sectionAnimations.forEach(animation => {
-			gsap.from(animation.selector, {
-				scrollTrigger: {
-					trigger: animation.trigger,
-					start: 'top 80%',
-					end: 'bottom 20%',
-					toggleActions: 'play none none reverse'
-				},
-				opacity: 0,
-				y: animation.y,
-				duration: 0.8,
-				delay: animation.delay || 0,
-				stagger: animation.stagger || 0,
-				ease: 'power2.out'
-			});
-		});
+    // Iterate over the configuration and create animations
+    sectionAnimations.forEach((animation) => {
+      gsap.from(animation.selector, {
+        scrollTrigger: {
+          trigger: animation.trigger,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse",
+        },
+        opacity: 0,
+        y: animation.y,
+        duration: 0.8,
+        delay: animation.delay || 0,
+        stagger: animation.stagger || 0,
+        ease: "power2.out",
+      });
+    });
 
-		// Special handling for project cards with ScrollTrigger and fallback
-		const projectCards = document.querySelectorAll('#projects .grid > div');
-		if (projectCards.length > 0) {
-			// Set initial state
-			gsap.set('#projects .grid > div', { opacity: 0, y: 80 });
-			
-			// Create ScrollTrigger animation
-			gsap.to('#projects .grid > div', {
-				scrollTrigger: {
-					trigger: '#projects .grid',
-					start: 'top 80%',
-					end: 'bottom 20%',
-					toggleActions: 'play none none reverse',
-					onEnter: () => console.log('Projects ScrollTrigger entered'),
-					onLeave: () => console.log('Projects ScrollTrigger left')
-				},
-				opacity: 1,
-				y: 0,
-				duration: 0.8,
-				stagger: 0.3,
-				ease: 'power2.out'
-			});
+    // Special handling for project cards with ScrollTrigger and fallback
+    const projectCards = document.querySelectorAll("#projects .grid > div");
+    if (projectCards.length > 0) {
+      // Set initial state
+      gsap.set("#projects .grid > div", { opacity: 0, y: 80 });
 
-			// Fallback: if ScrollTrigger doesn't work, animate after 3 seconds
-			setTimeout(() => {
-				const cards = document.querySelectorAll('#projects .grid > div');
-				const isVisible = Array.from(cards).some(card => {
-					const rect = card.getBoundingClientRect();
-					return rect.top < window.innerHeight && rect.bottom > 0;
-				});
-				
-				if (!isVisible) {
-					console.log('ScrollTrigger fallback: animating project cards');
-					gsap.to('#projects .grid > div', {
-						opacity: 1,
-						y: 0,
-						duration: 0.8,
-						stagger: 0.3,
-						ease: 'power2.out'
-					});
-				}
-			}, 3000);
-		}
-	}
+      // Create ScrollTrigger animation
+      gsap.to("#projects .grid > div", {
+        scrollTrigger: {
+          trigger: "#projects .grid",
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse",
+          onEnter: () => console.log("Projects ScrollTrigger entered"),
+          onLeave: () => console.log("Projects ScrollTrigger left"),
+        },
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        stagger: 0.3,
+        ease: "power2.out",
+      });
 
-	function setupSmoothScroll() {
-		// Smooth scroll for navigation links
-		document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-			anchor.addEventListener('click', function (this: HTMLAnchorElement, e: Event) {
-				e.preventDefault();
-				const target = document.querySelector(this.getAttribute('href') || '');
-				if (target) {
-					gsap.to(window, {
-						duration: 0.1,
-						scrollTo: { y: target, offsetY: 80 },
-						ease: 'power2.inOut'
-					});
-				}
-			});
-		});
-	}
+      // Fallback: if ScrollTrigger doesn't work, animate after 3 seconds
+      setTimeout(() => {
+        const cards = document.querySelectorAll("#projects .grid > div");
+        const isVisible = Array.from(cards).some((card) => {
+          const rect = card.getBoundingClientRect();
+          return rect.top < window.innerHeight && rect.bottom > 0;
+        });
+
+        if (!isVisible) {
+          console.log("ScrollTrigger fallback: animating project cards");
+          gsap.to("#projects .grid > div", {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            stagger: 0.3,
+            ease: "power2.out",
+          });
+        }
+      }, 3000);
+    }
+  }
+
+  function setupSmoothScroll() {
+    // Smooth scroll for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener(
+        "click",
+        function (this: HTMLAnchorElement, e: Event) {
+          e.preventDefault();
+          const target = document.querySelector(
+            this.getAttribute("href") || ""
+          );
+          if (target) {
+            gsap.to(window, {
+              duration: 0.1,
+              scrollTo: { y: target, offsetY: 80 },
+              ease: "power2.inOut",
+            });
+          }
+        }
+      );
+    });
+  }
 </script>
