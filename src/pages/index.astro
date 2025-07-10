@@ -9,6 +9,14 @@ import TimezoneDisplay from "../components/TimezoneMap.jsx";
 import TypingAnimation from "../components/TypingAnimation.jsx";
 import TechCarousel from "../components/TechCarousel.jsx";
 import ScrollToTop from "../components/ScrollToTop.jsx";
+
+// Import images
+import dockerLogo from "../images/docker.svg";
+import astroLogo from "../images/astro-logo.svg";
+import revealLogo from "../images/reveal-logo.svg";
+import awsLogo from "../images/aws-logo.svg";
+import rocCapitalLogo from "../images/roc-capital-logo.svg";
+import oniwiNailsLogo from "../images/oniwi-nails.png";
 ---
 
 <Layout title="Diego Velasquez | Portfolio | Software Engineer">
@@ -79,7 +87,7 @@ import ScrollToTop from "../components/ScrollToTop.jsx";
         </div>
         <h1 class="hero-title text-5xl md:text-7xl font-bold text-white mb-6">
           <div class="min-h-[4rem] md:min-h-[5rem] flex items-center">
-            <TypingAnimation client:load />
+            <TypingAnimation client:only="react" />
           </div>
           <span
             class="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent"
@@ -206,7 +214,7 @@ import ScrollToTop from "../components/ScrollToTop.jsx";
         title="Skills & Technologies"
         description="I work with modern technologies and tools to create exceptional digital experiences"
       />
-      <TechCarousel client:load />
+      <TechCarousel client:only="react" />
       <div class="grid md:grid-cols-3 gap-8">
         <SkillCard
           icon="💻"
@@ -282,7 +290,7 @@ import ScrollToTop from "../components/ScrollToTop.jsx";
           tagColor="bg-orange-900/30 text-orange-300"
         />
         <LearningCard
-          logo="/images/docker.svg"
+          logo={dockerLogo}
           title="Docker"
           description="Mastering containerization with Docker for consistent development environments, microservices architecture, and streamlined deployment workflows."
           tag="Containerization"
@@ -301,7 +309,7 @@ import ScrollToTop from "../components/ScrollToTop.jsx";
           logoStyle="background-color: #2496ED;"
         />
         <LearningCard
-          logo="/images/astro-logo.svg"
+          logo={astroLogo}
           title="Astro"
           description="Building blazing fast, modern websites with Astro. This portfolio is proudly built using Astro for optimal performance and flexibility."
           tag="Web Framework"
@@ -321,7 +329,7 @@ import ScrollToTop from "../components/ScrollToTop.jsx";
       />
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <ProjectCard
-          logo="/images/reveal-logo.svg"
+          logo={revealLogo}
           logoAlt="Reveal Logo"
           title="Reveal Mobile App and Web Portal"
           description="Maintained a high-rated mobile app with 150K+ reviews and 4.9-star rating for hunting cameras."
@@ -341,7 +349,7 @@ import ScrollToTop from "../components/ScrollToTop.jsx";
           ]}
         />
         <ProjectCard
-          logo="/images/aws-logo.svg"
+          logo={awsLogo}
           logoAlt="AWS Logo"
           title="AWS Automation Platform"
           description="Automated data gathering and processing using AWS Lambda, S3, and Athena for Amazon Payroll."
@@ -350,7 +358,7 @@ import ScrollToTop from "../components/ScrollToTop.jsx";
           backgroundStyle="bg-white"
         />
         <ProjectCard
-          logo="/images/roc-capital-logo.svg"
+          logo={rocCapitalLogo}
           logoAlt="Roc Capital Logo"
           title="Customer Portal Development"
           description="Developed a comprehensive customer portal at Roc Capital that increased customer reach by 40% and improved user experience."
@@ -360,14 +368,14 @@ import ScrollToTop from "../components/ScrollToTop.jsx";
           links={[{ text: "View Project", url: "https://roccapital.com/" }]}
         />
         <ProjectCard
-          logo="/images/oniwi-nails.png"
+          logo={oniwiNailsLogo}
           logoAlt="Oniwi Nails Logo"
           title="Oniwi Nails Website"
           description="Designed and developed a modern, responsive website for Oniwi Nails nail salon with booking functionality and service showcase."
           technologies={["React", "Next.js", "Tailwind CSS"]}
           logoSize="h-40 w-40"
           backgroundStyle="bg-gradient-to-br from-pink-50 to-white"
-          links={[{ text: "View Project", url: "https://oniwinails.com/" }]}
+          links={[{ text: "View Project", url: "https://oniwi-nails.com/" }]}
         />
         <ProjectCard
           logo="/favicon.svg"

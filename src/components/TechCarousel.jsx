@@ -1,119 +1,152 @@
 import React, { useEffect, useRef } from "react";
 
-const TechCarousel = () => {
+// Import all tech images
+import reactIcon from "../images/tech/react.svg";
+import nextIcon from "../images/tech/next.svg";
+import typescriptIcon from "../images/tech/typescript.svg";
+import javascriptIcon from "../images/tech/javascript.svg";
+import nodejsIcon from "../images/tech/nodejs.svg";
+import expressIcon from "../images/tech/express.svg";
+import tailwindcssIcon from "../images/tech/tailwindcss.svg";
+import postgresqlIcon from "../images/tech/postgresql.svg";
+import mongodbIcon from "../images/tech/mongodb.svg";
+import gitIcon from "../images/tech/git.svg";
+import githubIcon from "../images/tech/github.svg";
+import dockerIcon from "../images/tech/docker.svg";
+import vercelIcon from "../images/tech/vercel.svg";
+import astroIcon from "../images/tech/astro.svg";
+import figmaIcon from "../images/tech/figma.svg";
+import eslintIcon from "../images/tech/eslint.svg";
+import npmIcon from "../images/tech/npm.svg";
+import pnpmIcon from "../images/tech/pnpm.svg";
+import turborepoIcon from "../images/tech/turborepo.svg";
+import cloudflareIcon from "../images/tech/cloudflare.svg";
+import rustIcon from "../images/tech/rust.svg";
+import pythonIcon from "../images/tech/python.svg";
+import awsIcon from "../images/tech/aws.svg";
+
+// Create a singleton for tech items to prevent recreation
+const techItems = [
+  {
+    name: "React",
+    icon: reactIcon,
+    url: "https://reactjs.org/",
+  },
+  {
+    name: "Next.js",
+    icon: nextIcon,
+    url: "https://nextjs.org/",
+  },
+  {
+    name: "TypeScript",
+    icon: typescriptIcon,
+    url: "https://www.typescriptlang.org/",
+  },
+  {
+    name: "JavaScript",
+    icon: javascriptIcon,
+    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+  },
+  {
+    name: "Node.js",
+    icon: nodejsIcon,
+    url: "https://nodejs.org/",
+  },
+  {
+    name: "Express.js",
+    icon: expressIcon,
+    url: "https://expressjs.com/",
+  },
+  {
+    name: "Tailwind CSS",
+    icon: tailwindcssIcon,
+    url: "https://tailwindcss.com/",
+  },
+  {
+    name: "PostgreSQL",
+    icon: postgresqlIcon,
+    url: "https://www.postgresql.org/",
+  },
+  {
+    name: "MongoDB",
+    icon: mongodbIcon,
+    url: "https://www.mongodb.com/",
+  },
+  { name: "Git", icon: gitIcon, url: "https://git-scm.com/" },
+  {
+    name: "GitHub",
+    icon: githubIcon,
+    url: "https://github.com/",
+  },
+  {
+    name: "Docker",
+    icon: dockerIcon,
+    url: "https://www.docker.com/",
+  },
+  {
+    name: "Vercel",
+    icon: vercelIcon,
+    url: "https://vercel.com/",
+  },
+  {
+    name: "Astro",
+    icon: astroIcon,
+    url: "https://astro.build/",
+  },
+  {
+    name: "Figma",
+    icon: figmaIcon,
+    url: "https://www.figma.com/",
+  },
+  {
+    name: "ESLint",
+    icon: eslintIcon,
+    url: "https://eslint.org/",
+  },
+  {
+    name: "NPM",
+    icon: npmIcon,
+    url: "https://www.npmjs.com/",
+  },
+  { name: "PNPM", icon: pnpmIcon, url: "https://pnpm.io/" },
+  {
+    name: "Turborepo",
+    icon: turborepoIcon,
+    url: "https://turbo.build/",
+  },
+  {
+    name: "Cloudflare",
+    icon: cloudflareIcon,
+    url: "https://www.cloudflare.com/",
+  },
+  {
+    name: "Rust",
+    icon: rustIcon,
+    url: "https://www.rust-lang.org/",
+  },
+  {
+    name: "Python",
+    icon: pythonIcon,
+    url: "https://www.python.org/",
+  },
+  {
+    name: "AWS",
+    icon: awsIcon,
+    url: "https://aws.amazon.com/",
+  },
+];
+
+// Global flag to prevent multiple initializations
+let isInitialized = false;
+
+const TechCarousel = React.memo(() => {
   const carouselRef = useRef(null);
 
-  const techItems = [
-    {
-      name: "React",
-      icon: "/images/tech/react.svg",
-      url: "https://reactjs.org/",
-    },
-    {
-      name: "Next.js",
-      icon: "/images/tech/next.svg",
-      url: "https://nextjs.org/",
-    },
-    {
-      name: "TypeScript",
-      icon: "/images/tech/typescript.svg",
-      url: "https://www.typescriptlang.org/",
-    },
-    {
-      name: "JavaScript",
-      icon: "/images/tech/javascript.svg",
-      url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
-    },
-    {
-      name: "Node.js",
-      icon: "/images/tech/nodejs.svg",
-      url: "https://nodejs.org/",
-    },
-    {
-      name: "Express.js",
-      icon: "/images/tech/express.svg",
-      url: "https://expressjs.com/",
-    },
-    {
-      name: "Tailwind CSS",
-      icon: "/images/tech/tailwindcss.svg",
-      url: "https://tailwindcss.com/",
-    },
-    {
-      name: "PostgreSQL",
-      icon: "/images/tech/postgresql.svg",
-      url: "https://www.postgresql.org/",
-    },
-    {
-      name: "MongoDB",
-      icon: "/images/tech/mongodb.svg",
-      url: "https://www.mongodb.com/",
-    },
-    { name: "Git", icon: "/images/tech/git.svg", url: "https://git-scm.com/" },
-    {
-      name: "GitHub",
-      icon: "/images/tech/github.svg",
-      url: "https://github.com/",
-    },
-    {
-      name: "Docker",
-      icon: "/images/tech/docker.svg",
-      url: "https://www.docker.com/",
-    },
-    {
-      name: "Vercel",
-      icon: "/images/tech/vercel.svg",
-      url: "https://vercel.com/",
-    },
-    {
-      name: "Astro",
-      icon: "/images/tech/astro.svg",
-      url: "https://astro.build/",
-    },
-    {
-      name: "Figma",
-      icon: "/images/tech/figma.svg",
-      url: "https://www.figma.com/",
-    },
-    {
-      name: "ESLint",
-      icon: "/images/tech/eslint.svg",
-      url: "https://eslint.org/",
-    },
-    {
-      name: "NPM",
-      icon: "/images/tech/npm.svg",
-      url: "https://www.npmjs.com/",
-    },
-    { name: "PNPM", icon: "/images/tech/pnpm.svg", url: "https://pnpm.io/" },
-    {
-      name: "Turborepo",
-      icon: "/images/tech/turborepo.svg",
-      url: "https://turbo.build/",
-    },
-    {
-      name: "Cloudflare",
-      icon: "/images/tech/cloudflare.svg",
-      url: "https://www.cloudflare.com/",
-    },
-    {
-      name: "Rust",
-      icon: "/images/tech/rust.svg",
-      url: "https://www.rust-lang.org/",
-    },
-    {
-      name: "Python",
-      icon: "/images/tech/python.svg",
-      url: "https://www.python.org/",
-    },
-    {
-      name: "AWS",
-      icon: "/images/tech/aws.svg",
-      url: "https://aws.amazon.com/",
-    },
-  ];
-
   useEffect(() => {
+    // Prevent multiple initializations globally
+    if (isInitialized) return;
+    isInitialized = true;
+
     const loadGSAP = async () => {
       const { gsap } = await import("gsap");
 
@@ -172,7 +205,7 @@ const TechCarousel = () => {
           >
             <div className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center p-2 transition-all duration-300 group-hover:bg-gray-700 group-hover:scale-110">
               <img
-                src={tech.icon}
+                src={tech.icon.src}
                 alt={tech.name}
                 className="w-8 h-8 object-contain"
               />
@@ -185,6 +218,6 @@ const TechCarousel = () => {
       </div>
     </div>
   );
-};
+});
 
 export default TechCarousel;

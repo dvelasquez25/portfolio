@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 const greetings = [
   { text: "Hi, I'm", lang: "English" },
@@ -14,12 +14,17 @@ const greetings = [
   { text: "مرحبا، أنا", lang: "Arabic" },
 ];
 
-export default function TypingAnimation() {
-  const [currentIndex, setCurrentIndex] = useState(0);
+const TypingAnimation = React.memo(function TypingAnimation() {
   const textRef = useRef(null);
   const cursorRef = useRef(null);
+  const animationRef = useRef(null);
+  const currentIndexRef = useRef(0);
 
   useEffect(() => {
+    // Only initialize once
+    if (animationRef.current) return;
+    animationRef.current = true;
+
     const initializeTypingAnimation = async () => {
       try {
         const { gsap } = await import("gsap");
@@ -55,7 +60,7 @@ export default function TypingAnimation() {
                     if (currentText.length > 0) {
                       currentText = currentText.slice(0, -1); // Remove last character
                       textRef.current.textContent = currentText;
-                      setTimeout(deleteText, 100); // Delete next character after 50ms
+                      setTimeout(deleteText, 100); // Delete next character after 100ms
                     } else {
                       // Wait 0.5 seconds before next text
                       setTimeout(resolve, 500);
@@ -71,8 +76,8 @@ export default function TypingAnimation() {
         // Main animation loop
         const runAnimation = async () => {
           for (let i = 0; i < greetings.length; i++) {
+            currentIndexRef.current = i;
             await animateText(greetings[i].text);
-            setCurrentIndex((i + 1) % greetings.length);
           }
           // Restart the loop
           runAnimation();
@@ -90,6 +95,13 @@ export default function TypingAnimation() {
     };
 
     initializeTypingAnimation();
+
+    // Cleanup function
+    return () => {
+      if (animationRef.current) {
+        animationRef.current = false;
+      }
+    };
   }, []);
 
   return (
@@ -101,4 +113,6 @@ export default function TypingAnimation() {
       />
     </span>
   );
-}
+});
+
+export default TypingAnimation;

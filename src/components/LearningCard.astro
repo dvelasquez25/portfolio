@@ -1,6 +1,9 @@
 ---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
 export interface Props {
-  logo: string;
+  logo: ImageMetadata | string;
   title: string;
   description: string;
   tag: string;
@@ -29,11 +32,21 @@ const {
     class={`mb-6 ${logoContainer} flex items-center justify-center`}
     style={logoStyle}
   >
-    <img
-      src={logo}
-      alt={`${title} Logo`}
-      class={`${logoSize} object-contain mx-auto block`}
-    />
+    {
+      typeof logo === "string" ? (
+        <img
+          src={logo}
+          alt={`${title} Logo`}
+          class={`${logoSize} object-contain mx-auto block`}
+        />
+      ) : (
+        <Image
+          src={logo}
+          alt={`${title} Logo`}
+          class={`${logoSize} object-contain mx-auto block`}
+        />
+      )
+    }
   </div>
   <div class="mb-4">
     <span class={`px-3 py-1 ${tagColor} text-sm rounded-full`}>
