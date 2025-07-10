@@ -6,41 +6,61 @@ import LearningCard from "../components/LearningCard.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import ContactCard from "../components/ContactCard.astro";
 import TimezoneDisplay from "../components/TimezoneMap.jsx";
+import TypingAnimation from "../components/TypingAnimation.jsx";
+import TechCarousel from "../components/TechCarousel.jsx";
+import ScrollToTop from "../components/ScrollToTop.jsx";
 ---
 
 <Layout title="Diego Velasquez | Portfolio | Software Engineer">
   <!-- Navigation -->
   <nav
-    class="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-200"
+    class="fixed top-0 w-full /80 backdrop-blur-md z-50 border-b border-gray-700"
   >
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
-        <div class="text-xl font-bold text-gray-900">Portfolio</div>
-        <div class="hidden md:flex space-x-8">
+        <div
+          class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent animate-gradient-x"
+        >
+          &lt;DV /&gt;
+        </div>
+        <div class="hidden md:flex space-x-8 items-center">
           <a
             href="#about"
-            class="text-gray-600 hover:text-gray-900 transition-colors">About</a
+            class="text-gray-300 hover:text-white transition-colors">About</a
           >
           <a
             href="#skills"
-            class="text-gray-600 hover:text-gray-900 transition-colors"
-            >Skills</a
+            class="text-gray-300 hover:text-white transition-colors">Skills</a
           >
           <a
             href="#learning"
-            class="text-gray-600 hover:text-gray-900 transition-colors"
-            >Learning</a
+            class="text-gray-300 hover:text-white transition-colors">Learning</a
           >
           <a
             href="#projects"
-            class="text-gray-600 hover:text-gray-900 transition-colors"
-            >Projects</a
+            class="text-gray-300 hover:text-white transition-colors">Projects</a
           >
           <a
             href="#contact"
-            class="text-gray-600 hover:text-gray-900 transition-colors"
-            >Contact</a
+            class="text-gray-300 hover:text-white transition-colors">Contact</a
           >
+        </div>
+        <!-- Mobile menu button -->
+        <div class="md:hidden flex items-center space-x-4">
+          <button class="text-gray-300 hover:text-white">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
         </div>
       </div>
     </div>
@@ -51,19 +71,23 @@ import TimezoneDisplay from "../components/TimezoneMap.jsx";
     <div class="max-w-6xl mx-auto text-center">
       <div>
         <div
-          class="hero-status inline-flex items-center px-4 py-2 rounded-full bg-green-100 text-green-800 text-sm font-medium mb-6 animate-pulse"
+          class="hero-status inline-flex items-center px-4 py-2 rounded-full bg-green-900/30 text-green-300 text-sm font-medium mb-6 animate-pulse"
         >
-          <span class="w-2 h-2 bg-green-600 rounded-full mr-2 animate-pulse"
+          <span class="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"
           ></span>
           Available for new opportunities
         </div>
-        <h1
-          class="hero-title text-5xl md:text-7xl font-bold text-gray-900 mb-6"
-        >
-          Hi, I'm <span class="text-blue-600">Diego Velasquez</span>
+        <h1 class="hero-title text-5xl md:text-7xl font-bold text-white mb-6">
+          <div class="min-h-[4rem] md:min-h-[5rem] flex items-center">
+            <TypingAnimation client:load />
+          </div>
+          <span
+            class="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent"
+            >Diego Velasquez</span
+          >
         </h1>
         <p
-          class="hero-subtitle text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto"
+          class="hero-subtitle text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto"
         >
           Senior Software Engineer with 6+ years of experience building
           high-rated applications, optimizing infrastructure, and enhancing
@@ -74,13 +98,13 @@ import TimezoneDisplay from "../components/TimezoneMap.jsx";
         >
           <a
             href="#projects"
-            class="bg-blue-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors"
+            class="bg-blue-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-400 transition-colors"
           >
             View My Work
           </a>
           <a
             href="#contact"
-            class="border border-gray-300 text-gray-700 px-8 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors"
+            class="border border-gray-600 text-gray-300 px-8 py-3 rounded-lg font-medium hover: transition-colors"
           >
             Get In Touch
           </a>
@@ -90,59 +114,84 @@ import TimezoneDisplay from "../components/TimezoneMap.jsx";
   </section>
 
   <!-- About Section -->
-  <section id="about" class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+  <section id="about" class="py-16 px-4 sm:px-6 lg:px-8">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold text-gray-900 mb-4">About Me</h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Senior Software Developer with expertise in React, automation, and
-          full-stack development. Proven track record in building high-rated
-          applications, optimizing infrastructure, and enhancing cybersecurity.
+        <h2 class="text-4xl font-bold text-white mb-4">About Me</h2>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+          Senior Software Engineer with expertise in full-stack development,
+          automation, and cloud technologies. Proven track record in building
+          high-rated applications, optimizing infrastructure, and enhancing
+          cybersecurity.
         </p>
       </div>
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div>
-          <h3 class="text-2xl font-semibold text-gray-900 mb-4">My Journey</h3>
-          <p class="text-gray-600 mb-6">
+          <h3 class="text-2xl font-semibold text-white mb-4">My Journey</h3>
+          <p class="text-gray-300 mb-6">
             With over 6 years of experience, I've worked at companies like
-            Amazon, Kyndryl, and Tactacam, building high-rated applications and
-            optimizing infrastructure. I specialize in React, automation, and
-            cloud technologies, with a strong focus on cybersecurity.
+            <span
+              class="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent font-semibold relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-gradient-to-r after:from-orange-400 after:to-orange-600"
+              >Amazon</span
+            >,
+            <span
+              class="bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent font-semibold relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-gradient-to-r after:from-red-500 after:to-red-700"
+              >Kyndryl</span
+            >,
+            <span
+              class="bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent font-semibold relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-gradient-to-r after:from-red-500 after:to-red-700"
+              >First Factory</span
+            >, and
+            <span
+              class="bg-gradient-to-r from-lime-400 to-lime-600 bg-clip-text text-transparent font-semibold relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-gradient-to-r after:from-lime-400 after:to-lime-600"
+              >Tactacam</span
+            >, building high-rated applications and optimizing infrastructure. I
+            specialize in React, automation, and cloud technologies, with a
+            strong focus on cybersecurity.
           </p>
-          <p class="text-gray-600 mb-6">
-            Currently pursuing my MSc in Cyber Security while working as a
+          <p class="text-gray-300 mb-6">
+            I graduated from the most prestigious computer engineering college
+            in Costa Rica, the
+            <span
+              class="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent font-semibold relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-gradient-to-r after:from-blue-400 after:to-blue-600"
+              >Costa Rica Institute of Technology (TEC)</span
+            >. Currently pursuing my MSc in Cyber Security while working as a
             Senior Software Engineer. I'm passionate about creating scalable
             solutions, implementing automation, and ensuring system reliability
             across cross-functional teams.
           </p>
           <div class="flex space-x-4">
-            <a href="#" class="text-blue-600 hover:text-blue-700 font-medium"
-              >Download Resume</a
+            <a
+              href="https://files.diegovelasquez.dev/2025%20-%20DiegoVelasquezResume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-blue-400 hover:text-blue-300 font-medium"
+              download="DiegoVelasquez_Resume_2025.pdf">Download Resume</a
             >
             <a
               href="https://linkedin.com/in/diegovelasquez25"
-              class="text-blue-600 hover:text-blue-700 font-medium"
+              class="text-blue-400 hover:text-blue-300 font-medium"
               >View LinkedIn</a
             >
           </div>
         </div>
-        <div class="bg-gray-100 rounded-2xl p-8">
+        <div class="bg-gray-700 rounded-2xl p-8">
           <div class="grid grid-cols-2 gap-6">
             <div class="text-center">
-              <div class="text-3xl font-bold text-blue-600 mb-2">6+</div>
-              <div class="text-gray-600">Years Experience</div>
+              <div class="text-3xl font-bold text-blue-400 mb-2">6+</div>
+              <div class="text-gray-300">Years Experience</div>
             </div>
             <div class="text-center">
-              <div class="text-3xl font-bold text-blue-600 mb-2">4.9★</div>
-              <div class="text-gray-600">App Rating (150K+ reviews)</div>
+              <div class="text-3xl font-bold text-blue-400 mb-2">4.9★</div>
+              <div class="text-gray-300">App Rating (150K+ reviews)</div>
             </div>
             <div class="text-center">
-              <div class="text-3xl font-bold text-blue-600 mb-2">40%</div>
-              <div class="text-gray-600">Customer Reach Increase</div>
+              <div class="text-3xl font-bold text-blue-400 mb-2">40%</div>
+              <div class="text-gray-300">Customer Reach Increase</div>
             </div>
             <div class="text-center">
-              <div class="text-3xl font-bold text-blue-600 mb-2">MSc</div>
-              <div class="text-gray-600">Cyber Security</div>
+              <div class="text-3xl font-bold text-blue-400 mb-2">MSc</div>
+              <div class="text-gray-300">Cyber Security</div>
             </div>
           </div>
         </div>
@@ -157,32 +206,60 @@ import TimezoneDisplay from "../components/TimezoneMap.jsx";
         title="Skills & Technologies"
         description="I work with modern technologies and tools to create exceptional digital experiences"
       />
+      <TechCarousel client:load />
       <div class="grid md:grid-cols-3 gap-8">
         <SkillCard
           icon="💻"
           title="Frontend & Mobile"
           skills={[
-            { name: "React.js", percentage: 95 },
-            { name: "React Native", percentage: 90 },
-            { name: "TypeScript", percentage: 85 },
+            {
+              name: "Web Applications",
+              description: "Full-stack web development expertise",
+            },
+            {
+              name: "Mobile Development",
+              description: "Cross-platform mobile app development",
+            },
+            {
+              name: "Responsive Design",
+              description: "Mobile-first approach to UI/UX",
+            },
           ]}
         />
         <SkillCard
           icon="⚡"
           title="Backend & Cloud"
           skills={[
-            { name: "Node.js", percentage: 90 },
-            { name: "Python", percentage: 85 },
-            { name: "AWS", percentage: 80 },
+            {
+              name: "Backend Systems",
+              description: "Robust API development and database design",
+            },
+            {
+              name: "Cloud Infrastructure",
+              description: "AWS and cloud-native solutions",
+            },
+            {
+              name: "Database Management",
+              description: "SQL and NoSQL database expertise",
+            },
           ]}
         />
         <SkillCard
           icon="🔧"
           title="Automation & DevOps"
           skills={[
-            { name: "Scripting", percentage: 90 },
-            { name: "SQL", percentage: 85 },
-            { name: "Cybersecurity", percentage: 80 },
+            {
+              name: "Process Automation",
+              description: "Scripting and workflow optimization",
+            },
+            {
+              name: "DevOps Practices",
+              description: "CI/CD and infrastructure as code",
+            },
+            {
+              name: "Cybersecurity",
+              description: "Security-first development approach",
+            },
           ]}
         />
       </div>
@@ -190,7 +267,7 @@ import TimezoneDisplay from "../components/TimezoneMap.jsx";
   </section>
 
   <!-- Currently Learning Section -->
-  <section id="learning" class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+  <section id="learning" class="py-16 px-4 sm:px-6 lg:px-8">
     <div class="max-w-6xl mx-auto">
       <SectionHeader
         title="Currently Learning"
@@ -202,14 +279,14 @@ import TimezoneDisplay from "../components/TimezoneMap.jsx";
           title="Rust Programming"
           description="Learning Rust for systems programming, memory safety, and high-performance applications. Exploring its unique ownership model and zero-cost abstractions."
           tag="Systems Programming"
-          tagColor="bg-orange-100 text-orange-800"
+          tagColor="bg-orange-900/30 text-orange-300"
         />
         <LearningCard
           logo="/images/docker.svg"
           title="Docker"
           description="Mastering containerization with Docker for consistent development environments, microservices architecture, and streamlined deployment workflows."
           tag="Containerization"
-          tagColor="bg-blue-100 text-blue-800"
+          tagColor="bg-blue-900/30 text-blue-300"
           logoSize="h-20 w-20"
           logoStyle="filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(199deg) brightness(104%) contrast(97%);"
         />
@@ -218,7 +295,7 @@ import TimezoneDisplay from "../components/TimezoneMap.jsx";
           title="Email Server Configuration"
           description="Setting up self-hosted email servers using Docker Mailserver for complete control over email infrastructure and domain management."
           tag="Infrastructure"
-          tagColor="bg-green-100 text-green-800"
+          tagColor="bg-green-900/30 text-green-300"
           logoSize="h-12 w-12"
           logoContainer="w-20 h-20 rounded-full flex items-center justify-center mx-auto"
           logoStyle="background-color: #2496ED;"
@@ -228,7 +305,7 @@ import TimezoneDisplay from "../components/TimezoneMap.jsx";
           title="Astro"
           description="Building blazing fast, modern websites with Astro. This portfolio is proudly built using Astro for optimal performance and flexibility."
           tag="Web Framework"
-          tagColor="bg-purple-100 text-purple-800"
+          tagColor="bg-purple-900/30 text-purple-300"
           logoSize="h-24 w-24"
         />
       </div>
@@ -236,7 +313,7 @@ import TimezoneDisplay from "../components/TimezoneMap.jsx";
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+  <section id="projects" class="py-16 px-4 sm:px-6 lg:px-8">
     <div class="max-w-6xl mx-auto">
       <SectionHeader
         title="Featured Projects"
@@ -307,7 +384,7 @@ import TimezoneDisplay from "../components/TimezoneMap.jsx";
   </section>
 
   <!-- Timezone Section -->
-  <section id="timezone" class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+  <section id="timezone" class="py-16 px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto">
       <SectionHeader
         title="Timezone Advantage"
@@ -315,8 +392,8 @@ import TimezoneDisplay from "../components/TimezoneMap.jsx";
       />
       <div class="flex flex-col items-center justify-center mt-8">
         <TimezoneDisplay client:load />
-        <p class="mt-6 text-center text-gray-600 text-lg">
-          <span class="font-semibold text-blue-700">Costa Rica</span> operates on
+        <p class="mt-6 text-center text-gray-300 text-lg">
+          <span class="font-semibold text-blue-300">Costa Rica</span> operates on
           Central Time (CST), perfectly aligned for US business hours.
         </p>
       </div>
@@ -350,7 +427,7 @@ import TimezoneDisplay from "../components/TimezoneMap.jsx";
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-white py-12 px-4 sm:px-6 lg:px-8">
+  <footer class="bg-black text-white py-12 px-4 sm:px-6 lg:px-8">
     <div class="max-w-6xl mx-auto text-center">
       <div class="text-2xl font-bold mb-4">Diego Velasquez</div>
       <p class="text-gray-400 mb-8">
@@ -367,13 +444,16 @@ import TimezoneDisplay from "../components/TimezoneMap.jsx";
           class="text-gray-400 hover:text-white transition-colors">LinkedIn</a
         >
       </div>
-      <div class="border-t border-gray-800 pt-8">
+      <div class="border-t border-gray-700 pt-8">
         <p class="text-gray-400">
           &copy; 2025 Diego Velasquez. All rights reserved.
         </p>
       </div>
     </div>
   </footer>
+
+  <!-- Scroll to Top Button -->
+  <ScrollToTop client:load />
 </Layout>
 
 <script>
@@ -396,7 +476,7 @@ import TimezoneDisplay from "../components/TimezoneMap.jsx";
       // Ensure all elements are visible if GSAP is not available
       document
         .querySelectorAll(
-          "#projects .grid > div, #about .grid > div, #skills .grid > div, #contact .grid > div"
+          "#projects .grid > div, #about .grid > div, #skills .grid > div, #contact .grid > div, #projects .grid > div"
         )
         .forEach((el) => {
           (el as HTMLElement).style.opacity = "1";
@@ -510,6 +590,12 @@ import TimezoneDisplay from "../components/TimezoneMap.jsx";
         stagger: 0.2,
       },
       {
+        selector: "#projects .grid > div",
+        trigger: "#projects",
+        y: 50,
+        stagger: 0.3,
+      },
+      {
         selector: "#projects h2",
         trigger: "#projects",
         y: 50,
@@ -550,50 +636,6 @@ import TimezoneDisplay from "../components/TimezoneMap.jsx";
         ease: "power2.out",
       });
     });
-
-    // Special handling for project cards with ScrollTrigger and fallback
-    const projectCards = document.querySelectorAll("#projects .grid > div");
-    if (projectCards.length > 0) {
-      // Set initial state
-      gsap.set("#projects .grid > div", { opacity: 0, y: 80 });
-
-      // Create ScrollTrigger animation
-      gsap.to("#projects .grid > div", {
-        scrollTrigger: {
-          trigger: "#projects .grid",
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse",
-          onEnter: () => console.log("Projects ScrollTrigger entered"),
-          onLeave: () => console.log("Projects ScrollTrigger left"),
-        },
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        stagger: 0.3,
-        ease: "power2.out",
-      });
-
-      // Fallback: if ScrollTrigger doesn't work, animate after 3 seconds
-      setTimeout(() => {
-        const cards = document.querySelectorAll("#projects .grid > div");
-        const isVisible = Array.from(cards).some((card) => {
-          const rect = card.getBoundingClientRect();
-          return rect.top < window.innerHeight && rect.bottom > 0;
-        });
-
-        if (!isVisible) {
-          console.log("ScrollTrigger fallback: animating project cards");
-          gsap.to("#projects .grid > div", {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            stagger: 0.3,
-            ease: "power2.out",
-          });
-        }
-      }, 3000);
-    }
   }
 
   function setupSmoothScroll() {
