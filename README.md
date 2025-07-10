@@ -122,6 +122,51 @@ Update the skills section by modifying the progress bars and skill names in the 
 pnpm build
 ```
 
+### Deploy to Cloudflare Pages (Recommended)
+
+This project includes a GitHub Actions workflow for automatic deployment to Cloudflare Pages.
+
+#### Setup Instructions:
+
+1. **Create a Cloudflare Pages project:**
+
+   - Go to [Cloudflare Dashboard](https://dash.cloudflare.com)
+   - Navigate to Pages
+   - Create a new project
+   - Note down your project name
+
+2. **Get your Cloudflare credentials:**
+
+   - Go to [Cloudflare API Tokens](https://dash.cloudflare.com/profile/api-tokens)
+   - Create a new token with "Cloudflare Pages" permissions
+   - Note down your Account ID (found in the dashboard sidebar)
+
+3. **Add GitHub Secrets:**
+
+   - Go to your GitHub repository
+   - Navigate to Settings → Secrets and variables → Actions
+   - Add the following secrets:
+     - `CLOUDFLARE_API_TOKEN`: Your Cloudflare API token
+     - `CLOUDFLARE_ACCOUNT_ID`: Your Cloudflare Account ID
+     - `CLOUDFLARE_PAGES_PROJECT_NAME`: Your Cloudflare Pages project name
+
+4. **Deploy:**
+   - Push to the `main` branch
+   - The GitHub Action will automatically build and deploy your site
+
+#### Manual Deployment with Wrangler:
+
+```bash
+# Install Wrangler globally
+pnpm add -g wrangler
+
+# Login to Cloudflare
+wrangler login
+
+# Deploy
+wrangler pages deploy dist
+```
+
 ### Deploy to Netlify
 
 1. Push your code to GitHub
